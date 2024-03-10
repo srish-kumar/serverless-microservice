@@ -226,7 +226,7 @@ Click "Create Resource".
 
 6. Input "DynamoDBManager" in the Resource Name. Click "Create Resource". 
 
-![Create resource](./images/create-resource-name.jpg)
+![Create resource](./images/create-resource-name1.jpg)
 
 Resource Path will get displayed as provided.
 
