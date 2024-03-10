@@ -216,9 +216,9 @@ Create the DynamoDB table that the Lambda function uses.
 
 ![Create REST API](./images/create-new-api.jpg)
 
-5. Each API is collection of resources and methods that are integrated with backend HTTP endpoints, Lambda functions, or other AWS services. Typically, API resources are organized in a resource tree according to the application logic. At this time you only have the root resource, but let's add a resource next 
+5. Each API is collection of resources and methods that are integrated with backend HTTP endpoints, Lambda functions, or other AWS services. Typically, API resources are organized in a resource tree according to the application logic. At this time you only have the root resource, but let's add a resource next. 
 
-Click "Actions", then click "Create Resource"
+Click "Create Resource".
 
 ![Create API resource](./images/create-api-resource.jpg)
 
