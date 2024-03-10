@@ -1,4 +1,4 @@
-#  Serverless Microservices with load test
+#  Serverless Microservices with Load Test
 
 ## Overview And High Level Design
 
