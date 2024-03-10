@@ -53,7 +53,8 @@ This custom policy will have permission to DynamoDB and CloudWatch Logs, require
 1. Open the Policies page in the IAM console.
 2. Choose Create policy
 3. Choose JSON as Policy editor
-4. Add the permissions for the policy - 
+4. Add the permissions for the policy -
+   
     ```json
     {
     "Version": "2012-10-17",
@@ -84,9 +85,11 @@ This custom policy will have permission to DynamoDB and CloudWatch Logs, require
     ]
     }
     ```
-5. Choose Next
-6. Policy name – **lambda-dynamoDB-cloudWatch-policy**
-7. Choose Create policy
+![Custom Policy](./images/custom-policy.jpg)
+
+6. Choose Next
+7. Policy name – **lambda-dynamoDB-cloudWatch-policy**
+8. Choose Create policy
 
 ### Create Lambda IAM Role
 
