@@ -195,7 +195,7 @@ Create the DynamoDB table that the Lambda function uses.
 3. Create a table with the following settings.
    * Table name – lambda-apigateway
    * Primary key – id (string)
-4. Choose Create.
+4. Choose "Create table".
 
 ![create DynamoDB table](./images/create-dynamo-table.jpg)
 
@@ -222,19 +222,21 @@ Click "Actions", then click "Create Resource"
 
 ![Create API resource](./images/create-api-resource.jpg)
 
-6. Input "DynamoDBManager" in the Resource Name, Resource Path will get populated. Click "Create Resource"
+6. Input "DynamoDBManager" in the Resource Name. Click "Create Resource". 
 
 ![Create resource](./images/create-resource-name.jpg)
 
-7. Let's create a POST Method for our API. With the "/dynamodbmanager" resource selected, Click "Actions" again and click "Create Method". 
+Resource Path will get displayed as provided.
+
+7. Let's create a POST Method for our API. With the "/dynamodbmanager" resource selected, Click "Create Method" under "Methods" section. 
 
 ![Create resource method](./images/create-method-1.jpg)
 
-8. Select "POST" from drop down , then click checkmark
+8. Select "POST" from Method type drop down.
 
 ![Create resource method](./images/create-method-2.jpg)
 
-9. The integration will come up automatically with "Lambda Function" option selected. Select "LambdaFunctionOverHttps" function that we created earlier. As you start typing the name, your function name will show up.Select and click "Save". A popup window will come up to add resource policy to the lambda to be invoked by this API. Click "Ok"
+9. The integration will come up automatically with "Lambda Function" option selected. Select "LambdaFunctionOverHttps" function that we created earlier. As you start typing the name, your function name will show up. Select function and click "Create method".
 
 ![Create lambda integration](./images/create-lambda-integration.jpg)
 
@@ -244,11 +246,11 @@ Our API-Lambda integration is done!
 
 In this step, you deploy the API that you created to a stage called prod.
 
-1. Click "Actions", select "Deploy API"
+1. On the Resources screen, with "POST" selected, click "Deploy API"
 
 ![Deploy API](./images/deploy-api-1.jpg)
 
-2. Now it is going to ask you about a stage. Select "[New Stage]" for "Deployment stage". Give "Prod" as "Stage name". Click "Deploy"
+2. A "Deploy API" pop-up will come, asking you about a stage. Select "[New Stage]" for "Stage". Give "Prod" as "Stage name" and click "Deploy"
 
 ![Deploy API to Prod Stage](./images/deploy-api-2.jpg)
 
@@ -273,7 +275,7 @@ In this step, you deploy the API that you created to a stage called prod.
     }
 }
 ```
-2. To execute our API from local machine, we are going to use Postman and Curl command. You can choose either method based on your convenience and familiarity. 
+2. To execute our API from local machine, we are going to use Postman or Curl command. You can choose either method based on your convenience and familiarity. 
     * To run this from Postman, select "POST" , paste the API invoke url. Then under "Body" select "raw" and paste the above JSON. Click "Send". API should execute and return "HTTPStatusCode" 200.
 
     ![Execute from Postman](./images/create-from-postman.jpg)
