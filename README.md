@@ -278,19 +278,27 @@ In this step, you deploy the API that you created to a stage called prod.
 }
 ```
 2. To execute our API from local machine, we are going to use Postman or Curl command. You can choose either method based on your convenience and familiarity. 
-    * To run this from Postman, select "POST" , paste the API invoke url. Then under "Body" select "raw" and paste the above JSON. Click "Send". API should execute and return "HTTPStatusCode" 200.
+   * To run this from Postman, select "POST" , paste the API invoke url. Then under "Body" select "raw" and paste the above JSON. Click "Send". API should execute and return "HTTPStatusCode" 200.
 
-    ![Execute from Postman](./images/create-from-postman.jpg)
+![Execute from Postman](./images/create-from-postman.jpg)
 
-    * To run this from terminal using Curl, run the below
+* To run this from terminal using Curl, run the below
     ```
     $ curl -X POST -d "{\"operation\":\"create\",\"tableName\":\"lambda-apigateway\",\"payload\":{\"Item\":{\"id\":\"1\",\"name\":\"Bob\"}}}" https://$API.execute-api.$REGION.amazonaws.com/prod/DynamoDBManager
     ```   
-3. To validate that the item is indeed inserted into DynamoDB table, go to Dynamo console, select "lambda-apigateway" table, select "Items" tab, and the newly inserted item should be displayed.
+3. To validate that the item is indeed inserted into DynamoDB table, go to Dynamo console, click-on "Explore items", select "lambda-apigateway" table, and the newly inserted item should be displayed.
 
 ![Dynamo Item](./images/dynamo-item.jpg)
 
-4. To get all the inserted items from the table, we can use the "list" operation of Lambda using the same API. Pass the following JSON to the API, and it will return all the items from the Dynamo table
+4. To create few more items in your DynamoDB table, you can repeate step 2, with different "id" and "number" values in the json payload.
+
+![More Dynamo Items](./images/create-more-from-postman.jpg)    
+
+5. Repeate step 3 to see all the newly inserted items in the DynamoDB table.
+
+![Dynamo Items](./images/more-dynamo-items.jpg)    
+
+6. To get all the inserted items from the table, we can use the "list" operation of Lambda using the same API. Pass the following JSON to the API, and it will return all the items from the Dynamo table
 
 ```json
 {
