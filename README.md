@@ -222,7 +222,7 @@ Create the DynamoDB table that the Lambda function uses.
 
 Click "Create Resource".
 
-![Create API resource](./images/create-api-resource1.jpg)
+![Create API resource](./images/create-api-resource.jpg)
 
 6. Input "DynamoDBManager" in the Resource Name. Click "Create Resource". 
 
