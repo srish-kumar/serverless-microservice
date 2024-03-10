@@ -290,11 +290,11 @@ In this step, you deploy the API that you created to a stage called prod.
 
 ![Dynamo Item](./images/dynamo-item.jpg)
 
-4. To create few more items in your DynamoDB table, you can repeate step 2, with different "id" and "number" values in the json payload.
+4. To create few more items in your DynamoDB table, you can repeat step 2 few more times, with different "id" and "number" values in the json payload.
 
 ![More Dynamo Items](./images/create-more-from-postman.jpg)    
 
-5. Repeate step 3 to see all the newly inserted items in the DynamoDB table.
+5. Repeat step 3 to see all the newly inserted items in the DynamoDB table.
 
 ![Dynamo Items](./images/more-dynamo-items.jpg)    
 
