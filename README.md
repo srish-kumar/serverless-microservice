@@ -45,17 +45,15 @@ The following is a sample request payload for a DynamoDB read item operation:
 
 ## Setup
 
-### Create Lambda IAM Role 
-Create the execution role that gives your function permission to access AWS resources.
+### Create a Custom Policy
 
-To create an execution role
+To create an Lambda IAM execution role, first create the custom policy to be attached to the execution role.
+This custom policy will have permission to DynamoDB and CloudWatch Logs, required to write data to DynamoDB and upload logs. 
 
-1. Open the roles page in the IAM console.
-2. Choose Create role.
-3. Create a role with the following properties.
-    * Trusted entity – Lambda.
-    * Role name – **lambda-apigateway-role**.
-    * Permissions – Custom policy with permission to DynamoDB and CloudWatch Logs. This custom policy has the permissions that  the function needs to write data to DynamoDB and upload logs. 
+1. Open the Policies page in the IAM console.
+2. Choose Create policy
+3. Choose JSON as Policy editor
+4. Add the permissions for the policy - 
     ```json
     {
     "Version": "2012-10-17",
@@ -86,6 +84,21 @@ To create an execution role
     ]
     }
     ```
+5. Choose Next
+6. Policy name – **lambda-dynamoDB-cloudWatch-policy**
+7. Choose Create policy
+
+### Create Lambda IAM Role
+
+Create the execution role that gives your function permission to access AWS resources.
+
+1. Open the roles page in the IAM console.
+2. Choose Create role.
+3. Create a role with the following properties.
+    * Trusted entity type – AWS service.
+    * Use case - Lambda
+    * Permissions policy – Choose **lambda-dynamoDB-cloudWatch-policy** that we created earlier.
+    * Role name - **lambda-apigateway-role**
 
 ### Create Lambda Function
 
@@ -94,13 +107,13 @@ To create an execution role
 
 ![Create function](./images/create-lambda.jpg)
 
-2. Select "Author from scratch". Use name **LambdaFunctionOverHttps** , select **Python 3.7** as Runtime. Under Permissions, select "Use an existing role", and select **lambda-apigateway-role** that we created, from the drop down
+2. Select "Author from scratch". Use name **LambdaFunctionOverHttps** , select **Python 3.12** as Runtime. Under Permissions, select "Use an existing role", and select **lambda-apigateway-role** that we created, from the drop down
 
 3. Click "Create function"
 
 ![Lambda basic information](./images/lambda-basic-info.jpg)
 
-4. Replace the boilerplate coding with the following code snippet and click "Save"
+4. Replace the boilerplate coding with the following code snippet and click "Deploy"
 
 **Example Python Code**
 ```python
@@ -146,11 +159,11 @@ def lambda_handler(event, context):
 ### Test Lambda Function
 
 Let's test our newly created function. We haven't created DynamoDB and the API yet, so we'll do a sample echo operation. The function should output whatever input we pass.
-1. Click the arrow on "Select a test event" and click "Configure test events"
+1. Click the arrow on "Test" and click "Configure test event"
 
 ![Configure test events](./images/lambda-test-event-create.jpg)
 
-2. Paste the following JSON into the event. The field "operation" dictates what the lambda function will perform. In this case, it'd simply return the payload from input event as output. Click "Create" to save
+2. Paste the following JSON into the event. The field "operation" dictates what the lambda function will perform. In this case, it'd simply return the payload from input event as output. Put event name as "echotest" and click "Save".
 ```json
 {
     "operation": "echo",
