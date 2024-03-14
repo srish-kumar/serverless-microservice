@@ -316,16 +316,64 @@ We have successfully created a serverless API using API Gateway, Lambda, and Dyn
 ## API Performance Testing
 
 API performance testing can help you:
-•	Ensure your API can handle the expected load and check how the API responds to changes in load (load is the number of parallel users hitting your APIs at the same time).
-•	Optimize and improve the API’s performance to ensure a better user experience.
-•	Identify any bottlenecks, latency, and failures and determine the scalability of the system.
+* Ensure your API can handle the expected load and check how the API responds to changes in load (load is the number of parallel users hitting your APIs at the same time).
+* Optimize and improve the API’s performance to ensure a better user experience.
+* Identify any bottlenecks, latency, and failures and determine the scalability of the system.
 
 ### API Performance Testing using Postman
 
 1. Create a new Collection by following below steps:
-•	Open the Postman desktop app and login.
-•	Inside your workspace, create a new collection by clicking on Create new collection  and selecting “Blank collection”.
+* Open the Postman desktop app and login.
+* Inside your workspace, create a new collection by clicking on Create new collection  and selecting “Blank collection”.
+
 ![Create Collection](./images/create-collection.jpg)
+
+* Rename the collection “Serverless API Performance Testing” and click on “Add a request”.
+
+![Add a request](./images/collection-add-a-request-1.jpg)
+
+* In the new request, select "POST” and paste the API invoke url. Then under "Body" select "raw" and paste the below JSON and click Save. This setup is like step 6, under Running our solution described above.
+
+```json
+{
+    "operation": "list",
+    "tableName": "lambda-apigateway",
+    "payload": {
+    }
+}
+```
+![Add a request](./images/collection-add-a-request-2.jpg)
+
+2. Capture the current lambda Configuration.
+* Go to AWS Lambda Console and open the “LambdaFunctionOverHttps” function, created earlier.
+* Go to “Configuration” and select “General configuration”, note down the default memory and timeout.
+
+![Lambda Configuration](./images/api-configuration-memory.jpg)
+
+3. API performance testing
+* For the collection created above, select “View more actions” and select “Run collection”. This will open a “Runner” screen.
+
+![Runner Screen](./images/collection-runner.jpg)
+
+* Select the Performance tab under Runner
+* Specify the virtual users, test duration and load profile to simulate the load condition and click Run.
+
+![Test Configuration](./images/performance-test-config.jpg)
+
+* Observe the average response time, throughput and error rate in real time.
+
+![Real Time Performance](./images/real-time-performance.jpg)
+
+
+4. Improve API performance
+* Go back to your lambda , “LambdaFunctionOverHttps” and increase the memory allocation.
+Image – increase-lambda-memory
+•	Rerun the performance test in Postman
+•	Observe the improvement in performance
+Image- 
+
+
+
 
 
 ## Cleanup
