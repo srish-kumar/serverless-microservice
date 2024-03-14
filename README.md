@@ -365,14 +365,18 @@ API performance testing can help you:
 ![Real Time Performance](./images/real-time-performance.jpg)
 
 
-4. Improve API performance
+### Improve API performance
+
+1. One of the ways to accelerate AWS Lambda performance is by increasing memory allocation.
+
 * Go back to your lambda , “LambdaFunctionOverHttps” and increase the memory allocation.
-Image – increase-lambda-memory
-•	Rerun the performance test in Postman
-•	Observe the improvement in performance
-Image- 
 
+![Lambda Memory Allocation](./images/increase-lambda-memory.jpg)
 
+* Rerun the performance test in Postman
+* Observe the improvement in performance
+
+![Performance Improvement](./images/api-performance-improvement.jpg)
 
 
 
@@ -380,17 +384,18 @@ Image-
 
 Let's clean up the resources we have created for this lab.
 
+### Cleaning up
 
-### Cleaning up DynamoDB
+* To delete the table, from DynamoDB console, select the table "lambda-apigateway", and click "Delete"
 
-To delete the table, from DynamoDB console, select the table "lambda-apigateway", and click "Delete table"
+![Delete Table](./images/delete-table.jpg)
 
-![Delete Dynamo](./images/delete-dynamo.jpg)
-
-To delete the Lambda, from the Lambda console, select lambda "LambdaFunctionOverHttps", click "Actions", then click Delete 
+* To delete the Lambda, from the Lambda console, select lambda "LambdaFunctionOverHttps", click "Actions", then click Delete
 
 ![Delete Lambda](./images/delete-lambda.jpg)
 
-To delete the API we created, in API gateway console, under APIs, select "DynamoDBOperations" API, click "Actions", then "Delete"
+* To delete the API we created, in API gateway console, under APIs, select "DynamoDBOperations" API, click "Actions", then "Delete"
+  
+ ![Delete API](./images/delete-api.jpg)
+  
 
-![Delete API](./images/delete-api.jpg)
