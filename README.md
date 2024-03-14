@@ -312,6 +312,22 @@ In this step, you deploy the API that you created to a stage called prod.
 
 We have successfully created a serverless API using API Gateway, Lambda, and DynamoDB!
 
+
+## API Performance Testing
+
+API performance testing can help you:
+•	Ensure your API can handle the expected load and check how the API responds to changes in load (load is the number of parallel users hitting your APIs at the same time).
+•	Optimize and improve the API’s performance to ensure a better user experience.
+•	Identify any bottlenecks, latency, and failures and determine the scalability of the system.
+
+### API Performance Testing using Postman
+
+1. Create a new Collection by following below steps:
+•	Open the Postman desktop app and login.
+•	Inside your workspace, create a new collection by clicking on Create new collection  and selecting “Blank collection”.
+![Create Collection](./images/create-collection.jpg)
+
+
 ## Cleanup
 
 Let's clean up the resources we have created for this lab.
