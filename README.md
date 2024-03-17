@@ -4,7 +4,7 @@
 
 Let's start with the High Level Design.
 
-![High Level Design](./images/high-level-design.jpg)
+![High Level Design](./images/serverless_microservice_load.jpg)
 
 An Amazon API Gateway is a collection of resources and methods. For this hand-on, you create one resource (DynamoDBManager) and define one method (POST) on it. 
 The method is backed by a Lambda function (LambdaFunctionOverHttps). That is, when you call the API through an HTTPS endpoint, Amazon API Gateway invokes the Lambda function.
@@ -378,6 +378,10 @@ API performance testing can help you:
 
 ![Performance Improvement](./images/api-performance-improvement.jpg)
 
+
+### Secure Your AWS API Gateway Using Cognito
+
+![High Level Design](./images/high-level-design.jpg)
 
 
 ## Cleanup
