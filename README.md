@@ -479,9 +479,11 @@ We are also going to setup the Cognito Authorizer in API Gateway, which will han
 ![User added to Userpool](./images/user_added_userpool.jpg)
 
 
+
 ### Integrate Cognito User pool with API Gateway
 
-* 
+* In real world scenario, you will have a front end or static website. User can sign in from the front end and will get the authentication token sent back from Cognito.
+* User can provide this Id token to the autherization header.
 
   
 
