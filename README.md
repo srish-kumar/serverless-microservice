@@ -421,6 +421,7 @@ We are also going to setup the Cognito Authorizer in API Gateway, which will han
 ![Configure sign-up](./images/configure_signup.jpg)
 
 * Configure message delivery. Choose Email provider as "Send email with Cognito". For production SES is recommended as Cognito can only sent 50 email/day.
+  
 ![Configure message](./images/configure_message.jpg)
 
 * Integrate your app. Provide a user pool name. Choose "Use the Cognito Hosted UI". It will allow to use a pre-built UI for sign up, sign in and recover password.
@@ -495,7 +496,9 @@ We are also going to setup the Cognito Authorizer in API Gateway, which will han
 ![Create Authorizer Screen](./images/create_authorizers.jpg)
 
 * An Authorizer is created.
+  
 ![Authorizer Created](./images/authorizers_created.jpg)
+
 
 ### Simulate a login from the command line to generate an id token
 
@@ -553,46 +556,18 @@ We are also going to setup the Cognito Authorizer in API Gateway, which will han
 * As the authorization was successful, the API Gateway authorized the request to invoke the lambda and fetch the list of items from the Dynamodb, then sent back the response.
 
 
-
-
-
-
-    
-
-
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## Cleanup
 
 Let's clean up the resources we have created for this lab.
 
 ### Cleaning up
 
-* To delete the table, from DynamoDB console, select the table "lambda-apigateway", and click "Delete"
+* To delete the table, from DynamoDB console, select the table "lambda-apigateway" and then click "Delete"
 
-![Delete Table](./images/delete-table.jpg)
+* To delete the Lambda, from the Lambda console, select lambda "LambdaFunctionOverHttps" and then click Delete.
 
-* To delete the Lambda, from the Lambda console, select lambda "LambdaFunctionOverHttps", click "Actions", then click Delete
+* To delete the API we created, in API gateway console, under APIs, select "DynamoDBOperations" API and then click "Delete".
 
-![Delete Lambda](./images/delete-lambda.jpg)
+* To delete the User Poll we created, in Cognito console, under APIs, select the user pool and then click  "Delete"
 
-* To delete the API we created, in API gateway console, under APIs, select "DynamoDBOperations" API, click "Actions", then "Delete"
   
- ![Delete API](./images/delete-api.jpg)
-  
-
