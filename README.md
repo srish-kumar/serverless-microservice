@@ -478,13 +478,89 @@ We are also going to setup the Cognito Authorizer in API Gateway, which will han
 
 ![User added to Userpool](./images/user_added_userpool.jpg)
 
-
-
-### Integrate Cognito User pool with API Gateway
-
-* In real world scenario, you will have a front end or static website. User can sign in from the front end and will get the authentication token sent back from Cognito.
+* In the real world scenario, you will have a front end or static website. User can sign in from the front end and will get the authentication token sent back from Cognito.
 * User can provide this Id token to the autherization header.
 
+
+## Integrate Cognito User pool with API Gateway
+
+### Setup an Authorizer in API Gateway
+
+* Go to API Console and select Authorizers. Click on "Create authorizer"
+
+![Create Authorizer](./images/api_authorizers.jpg)
+
+* On the Create authorizer screen, provide the name, select type as Cognito, select the user pool from the drop-down and add the token source as Authorization.
+
+![Create Authorizer Screen](./images/create_authorizers.jpg)
+
+* An Authorizer is created.
+![Authorizer Created](./images/authorizers_created.jpg)
+
+### Simulate a login from the command line to generate an id token
+
+* Open cloudShell and enter the command to simulate login and generate id token.
+      * Get the "user pool id" from the "User pool overview" section of the User pool create earlier.
+      * Get the "client id" from the App client list section under "App integration" tab.
+      * Username and password as created during sign up
+      * Hit enter
+ 
+![Command to generate Id Token](./images/sample_command_to_generate_auth_token.jpg)
+
+* Above command provides 9 types of tokens, the access token, refresh token and id token. Copy the IDToken.
+
+![IdToken](./images/IdToken.jpg)
+
+* Open the API Authorizer created earlier, paste the id_token as "Token value" under the Test authorizer section.
+* A response should have code 200 and other details about the token.
+
+![IdToken Test Response](./images/idtoken_test_response.jpg)
+
+
+### Add Authorization for the method request in API Gateway
+
+* Go to the POST method created earlier and edit the Method request
+  
+![Edit Method request](./images/edit_method_request.jpg)
+
+* In the Authorization drop-down, select the Cognito auhtorizer created earlier and click Save.
+
+![Add Authorization to Method](./images/add_authorization_to_method)
+
+* An authorization will be added to the method request.
+  
+![Method Authorization Created](./images/method_authorization_created.jpg)
+
+* Deploy the API in Prod stage.
+
+![Deploy Method](./images/method_deploy.jpg)
+
+
+## Send Request via Postman with Authorization Token
+
+* Invoke the POST method from Postman, as we did in the earlier Postman testing section. It will now throw "unauthorized" reponse as there is no authorization header.
+
+![Postman Unauthorized response](./images/postman_unauthorized_response.jpg)
+
+* Now under "Headers" tab, add a new Key as "Authorization" with value as id_token copied earlier.
+
+![Postman Add Header Token](./images/add_headers_authorization_IdToken.jpg)
+
+* Send the POST request again and this time the request will send the expected response with code 200 and list of items.
+
+![Postman Authorized response](./images/method_authorization_successful.jpg)
+
+* As the authorization was successful, the API Gateway authorized the request to invoke the lambda and fetch the list of items from the Dynamodb, then sent back the response.
+
+
+
+
+
+
+    
+
+
+  
   
 
 
