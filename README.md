@@ -422,9 +422,7 @@ We are also going to setup the Cognito Authorizer in API Gateway, which will han
 
 * Integrate your app
 ![Integrate app1](./images/integrate_app_1.jpg)
-
 ![Integrate app2](./images/integrate_app_2.jpg)
-
 ![Integrate app3](./images/integrate_app_3.jpg)
 
 * Review and create
