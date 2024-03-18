@@ -528,7 +528,7 @@ We are also going to setup the Cognito Authorizer in API Gateway, which will han
 
 * In the Authorization drop-down, select the Cognito auhtorizer created earlier and click Save.
 
-![Add Authorization to Method](./images/add_authorization_to_method)
+![Add Authorization to Method](./images/add_authorization_to_method.jpg)
 
 * An authorization will be added to the method request.
   
