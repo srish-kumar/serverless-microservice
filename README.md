@@ -409,12 +409,15 @@ We are also going to setup the Cognito Authorizer in API Gateway, which will han
 
 * Select options as shown below in the successive screens.
 * Configure sign-in experience. Choose sign-in with email. We want users to sign in with their email.
+
 ![Configure sign-in](./images/configure_signin.jpg)
 
 * Configure security requirements. Choose "Custom" password policy and uncheck all password requirements, just for testing purpose. Disable MFA. Leave account recovery options default.
+
 ![Configure security](./images/configure_security.jpg)
 
 * Configure sign-up experience. Leave all default selections.
+
 ![Configure sign-up](./images/configure_signup.jpg)
 
 * Configure message delivery. Choose Email provider as "Send email with Cognito". For production SES is recommended as Cognito can only sent 50 email/day.
@@ -422,6 +425,7 @@ We are also going to setup the Cognito Authorizer in API Gateway, which will han
 
 * Integrate your app. Provide a user pool name. Choose "Use the Cognito Hosted UI". It will allow to use a pre-built UI for sign up, sign in and recover password.
   Choose Cognito domain to use the hosted UI and provide a domain prefix. To use a custom domain, you will have to set it up in Route 53.
+
 ![Integrate app1](./images/integrate_app_1.jpg)
 
 * Povide app client name. You can have many client apps like web, mobile client apps, connected to the same user pool.
@@ -430,6 +434,7 @@ We are also going to setup the Cognito Authorizer in API Gateway, which will han
 ![Integrate app2](./images/integrate_app_2.jpg)
 
 * Select all authentication flows.
+
 ![Integrate app3](./images/integrate_app_3.jpg)
 
 * Review and create
@@ -437,6 +442,7 @@ We are also going to setup the Cognito Authorizer in API Gateway, which will han
 ![Review and create](./images/review_create.jpg)
 
 * User pool created and ready to use.
+
 ![User pool created](./images/userpool_created.jpg)
 
 
@@ -449,21 +455,27 @@ We are also going to setup the Cognito Authorizer in API Gateway, which will han
 ![View Hosted UI](./images/view_hosted_ui.jpg)
 
 * It will take you to the Cognito hosted Sign in page.
+
 ![Sign in Screen](./images/signin_screen.jpg)
 
 * Choose sign up and it will open the Sign up with a new account screen.
+
 ![Sign up Screen](./images/signup_screen.jpg)
 
 * Provide a valid email and a password and click "Sign up".
+
 ![Sign up](./images/signup.jpg)
 
 * A "Confirm you account screen" will appear. A verification code would have been sent to your email. Provide the verifcation code from email and enter it on the account verification screen and click "Confirm account"
+
 ![Email Verification](./images/email_verification_code.jpg)
 
 * User will be redirected to the call back url, in our case google search page.
+
 ![Callback URL Redirect](./images/callback_url.jpg)
 
 * Now if you go back to your user pool, you will see a user added under "Users". You can add many more users following the above steps.
+
 ![User added to Userpool](./images/user_added_userpool.jpg)
 
 
