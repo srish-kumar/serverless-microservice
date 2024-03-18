@@ -421,13 +421,14 @@ We are also going to setup the Cognito Authorizer in API Gateway, which will han
 ![Configure message](./images/configure_message.jpg)
 
 * Integrate your app
-![Integrate app](./images/integrate_app_1.jpg)
+![Integrate app1](./images/integrate_app_1.jpg)
 
-![Integrate app](./images/integrate_app_2.jpg)
+![Integrate app2](./images/integrate_app_2.jpg)
 
-![Integrate app](./images/integrate_app_3.jpg)
+![Integrate app3](./images/integrate_app_3.jpg)
 
 * Review and create
+
 ![Review and create](./images/review_create.jpg)
 
 * User pool created
