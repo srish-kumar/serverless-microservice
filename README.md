@@ -379,9 +379,16 @@ API performance testing can help you:
 ![Performance Improvement](./images/api-performance-improvement.jpg)
 
 
-### Secure Your AWS API Gateway Using Cognito
+# Secure Your AWS API Gateway Using Cognito
 
-![High Level Design](./images/high-level-design.jpg)
+## Overview And High Level Design
+
+Let's start with the High Level Design.
+
+![High Level Design Secure](./images/serverless_cognito.jpg)
+
+
+
 
 
 ## Cleanup
