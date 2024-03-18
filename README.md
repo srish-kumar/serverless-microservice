@@ -423,8 +423,11 @@ We are also going to setup the Cognito Authorizer in API Gateway, which will han
 * Integrate your app. Provide a user pool name. Choose "Use the Cognito Hosted UI". It will allow to use a pre-built UI for sign up, sign in and recover password.
   Choose Cognito domain to use the hosted UI and provide a domain prefix. To use a custom domain, you will have to set it up in Route 53.
 ![Integrate app1](./images/integrate_app_1.jpg)
-* Povide app client name. You can have many client apps like web, mobile client apps, connected to the same user pool. Provide callback url, where user will be redirected after sign in.
+
+* Povide app client name. You can have many client apps like web, mobile client apps, connected to the same user pool.
+  Provide callback url, where user will be redirected after sign in.
 ![Integrate app2](./images/integrate_app_2.jpg)
+
 * Select all authentication flows.
 ![Integrate app3](./images/integrate_app_3.jpg)
 
