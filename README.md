@@ -385,7 +385,21 @@ API performance testing can help you:
 
 Let's start with the High Level Design.
 
-![High Level Design Secure](./images/serverless_cognito.jpg)
+![High Level Design Secure](./images/serverless_cognito_1.jpg)
+
+By default, your API Gateway endpoints are not secured, so anyone with the endpoint url, can access it. One of the services you can use for managing your users and the sign-up/sign-in flows is Amazon Cognito.
+
+You can use an Amazon Cognito user pool to control who can access your API in Amazon API Gateway.
+
+To use an Amazon Cognito user pool with your API, you must first: 
+* Create an authorizer of the COGNITO_USER_POOLS type
+* Then configure an API method to use that authorizer and deploy the API.
+* Then the client must first sign the user in to the user pool, obtain an identity or access token for the user, and then call the API method with one of the tokens.
+* Tokens are set to the request's Authorization header.
+* The API call succeeds only if the required token is supplied and the supplied token is valid, otherwise, the client isn't authorized to make the call.
+
+I am going to show how to set up this whole flow, creating a User Pool, signing up and signing in users, then getting the id_token and provide this to the API Gateway, in the Authorization header.
+We are also going to setup the Cognito Authorizer in API Gateway, which will handle this authorization flow.
 
 
 
