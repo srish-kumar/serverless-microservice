@@ -440,9 +440,38 @@ We are also going to setup the Cognito Authorizer in API Gateway, which will han
 ![User pool created](./images/userpool_created.jpg)
 
 
-### Add users to the user pool
+### Add users to the user pool using Hosted UI
+
+* Open the created user pool and go to "App Integration"
+* Open the App client created under APp client list
+* In the Hosted UI section, click on "View Hosted UI".
+  
+![View Hosted UI](./images/view_hosted_ui.jpg)
+
+* It will take you to the Cognito hosted Sign in page.
+![Sign in Screen](./images/signin_screen.jpg)
+
+* Choose sign up and it will open the Sign up with a new account screen.
+![Sign up Screen](./images/signup_screen.jpg)
+
+* Provide a valid email and a password and click "Sign up".
+![Sign up](./images/signup.jpg)
+
+* A "Confirm you account screen" will appear. A verification code would have been sent to your email. Provide the verifcation code from email and enter it on the account verification screen and click "Confirm account"
+![Email Verification](./images/email_verification_code.jpg)
+
+* User will be redirected to the call back url, in our case google search page.
+![Callback URL Redirect](./images/callback_url.jpg)
+
+* Now if you go back to your user pool, you will see a user added under "Users". You can add many more users following the above steps.
+![User added to Userpool](./images/user_added_userpool.jpg)
 
 
+### Integrate Cognito User pool with API Gateway
+
+* 
+
+  
 
 
 
