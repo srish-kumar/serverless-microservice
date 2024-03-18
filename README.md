@@ -401,6 +401,9 @@ To use an Amazon Cognito user pool with your API, you must first:
 I am going to show how to set up this whole flow, creating a User Pool, signing up and signing in users, then getting the id_token and provide this to the API Gateway, in the Authorization header.
 We are also going to setup the Cognito Authorizer in API Gateway, which will handle this authorization flow.
 
+**Create a User Pool in AWS Cognito**
+* Open the AWS Management Console and navigate to Amazon Cognito.
+* Choose “Manage User Pools,” then “Create a User Pool.”
 
 
 
