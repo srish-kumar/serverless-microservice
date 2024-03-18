@@ -403,26 +403,29 @@ We are also going to setup the Cognito Authorizer in API Gateway, which will han
 
 ### Create a User Pool in AWS Cognito
 * Open the AWS Management Console and navigate to Amazon Cognito.
-* Choose “Create user pool”
+* Choose “Create user pool”. User pool is a pool of users who had signed up and can sign in.
 
 ![Create User Pool](./images/create_userpool.jpg)
 
 * Select options as shown below in the successive screens.
-* Configure sign-in experience
+* Configure sign-in experience. Choose sign-in with email. We want users to sign in with their email.
 ![Configure sign-in](./images/configure_signin.jpg)
 
-* Configure security requirements
+* Configure security requirements. Choose "Custom" password policy and uncheck all password requirements, just for testing purpose. Disable MFA. Leave account recovery options default.
 ![Configure security](./images/configure_security.jpg)
 
-* Configure sign-up experience
+* Configure sign-up experience. Leave all default selections.
 ![Configure sign-up](./images/configure_signup.jpg)
 
-* Configure message delivery
+* Configure message delivery. Choose Email provider as "Send email with Cognito". For production SES is recommended as Cognito can only sent 50 email/day.
 ![Configure message](./images/configure_message.jpg)
 
-* Integrate your app
+* Integrate your app. Provide a user pool name. Choose "Use the Cognito Hosted UI". It will allow to use a pre-built UI for sign up, sign in and recover password.
+  Choose Cognito domain to use the hosted UI and provide a domain prefix. To use a custom domain, you will have to set it up in Route 53.
 ![Integrate app1](./images/integrate_app_1.jpg)
+* Povide app client name. You can have many client apps like web, mobile client apps, connected to the same user pool. Provide callback url, where user will be redirected after sign in.
 ![Integrate app2](./images/integrate_app_2.jpg)
+* Select all authentication flows.
 ![Integrate app3](./images/integrate_app_3.jpg)
 
 * Review and create
