@@ -510,7 +510,7 @@ We are also going to setup the Cognito Authorizer in API Gateway, which will han
  
 ![Command to generate Id Token](./images/sample_command_to_generate_auth_token.jpg)
 
-* Above command provides 9 types of tokens, the access token, refresh token and id token. Copy the IDToken.
+* Above command provides three types of tokens, the access token, refresh token and id token. Copy the IDToken.
 
 ![IdToken](./images/IdToken.jpg)
 
